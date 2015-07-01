@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @input_field_manager.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @input_field_manager.description %>
+</p>
+
+<%= link_to 'Edit', edit_input_field_manager_path(@input_field_manager) %> |
+<%= link_to 'Back', input_field_managers_path %>

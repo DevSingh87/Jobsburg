@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Input Field Managers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @input_field_managers.each do |input_field_manager| %>
+      <tr>
+        <td><%= input_field_manager.name %></td>
+        <td><%= input_field_manager.description %></td>
+        <td><%= link_to 'Show', input_field_manager %></td>
+        <td><%= link_to 'Edit', edit_input_field_manager_path(input_field_manager) %></td>
+        <td><%= link_to 'Destroy', input_field_manager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Input field manager', new_input_field_manager_path %>
