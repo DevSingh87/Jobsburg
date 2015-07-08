@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edu_level: MyString
+  course: MyString
+
+two:
+  edu_level: MyString
+  course: MyString

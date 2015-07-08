@@ -1,0 +1,57 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Category<br>
+    <%= f.collection_select :category_id, Category.all, :id, :name, { :prompt => '--Choose Category--' }, { mutilple: false } %>
+  </div>
+  <div class="field">
+    <%= f.label :job_title %><br>
+    <%= f.text_field :job_title %>
+  </div>
+  <div class="field">
+    <%= f.label :job_description %><br>
+    <%= f.text_area :job_description %>
+  </div>
+  <div class="field">
+    <%= f.label :work_exp_min %><br>
+    <%= f.number_field :work_exp_min %>
+  </div>
+  <div class="field">
+    <%= f.label :work_exp_max %><br>
+    <%= f.number_field :work_exp_max %>
+  </div>
+  <div class="field">
+    <%= f.label :salary_range_min %><br>
+    <%= f.text_field :salary_range_min %>
+  </div>
+  <div class="field">
+    <%= f.label :salary_range_max %><br>
+    <%= f.text_field :salary_range_max %>
+  </div>
+  <div class="field">
+    <%= f.label :openings %><br>
+    <%= f.number_field :openings %>
+  </div>
+  <div class="field">
+    Location<br>
+   <%= f.collection_select :location_ids, Location.all, :id, :city_name, {}, { multiple: true } %>
+  </div>
+  <div class="field">
+    Industry<br>
+    <%= f.collection_select :industry_id, Industry.all, :id, :name, { :prompt => '--Choose Industry--' }, { multiple: false } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
