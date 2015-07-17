@@ -44,6 +44,10 @@
   <strong>Industry:</strong>
   <%= @job.industry %>
 </p>
+<p>
+  <strong>tags:</strong>
+  <%= @job.all_tags %>
+</p>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>
