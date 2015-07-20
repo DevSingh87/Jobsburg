@@ -1,0 +1,111 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Job title</th>
+      <th>Job description</th>
+      <th>Work exp min</th>
+      <th>Work exp max</th>
+      <th>Salary range min</th>
+      <th>Salary range max</th>
+      <th>Openings</th>
+      <th>Industry</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <h2>Freshers Jobs</h2>
+    <% @fresherjobs.each do |job| %>
+      <tr>
+        <td><%= job.category %></td>
+        <td><%= job.job_title %></td>
+        <td><%= job.job_description %></td>
+        <td><%= job.work_exp_min %></td>
+        <td><%= job.work_exp_max %></td>
+        <td><%= job.salary_range_min %></td>
+        <td><%= job.salary_range_max %></td>
+        <td><%= job.openings %></td>
+        <td><%= job.industry %></td>
+        <td><%= link_to 'Show', job %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <br/>
+  <h2>Govt Jobs</h2>
+  <table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Job title</th>
+      <th>Job description</th>
+      <th>Work exp min</th>
+      <th>Work exp max</th>
+      <th>Salary range min</th>
+      <th>Salary range max</th>
+      <th>Openings</th>
+      <th>Industry</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <% @govtjobs.each do |job| %>
+      <tr>
+        <td><%= job.category %></td>
+        <td><%= job.job_title %></td>
+        <td><%= job.job_description %></td>
+        <td><%= job.work_exp_min %></td>
+        <td><%= job.work_exp_max %></td>
+        <td><%= job.salary_range_min %></td>
+        <td><%= job.salary_range_max %></td>
+        <td><%= job.openings %></td>
+        <td><%= job.industry %></td>
+        <td><%= link_to 'Show', job %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <br/>
+  <h2>BPO Jobs</h2>
+  <table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Job title</th>
+      <th>Job description</th>
+      <th>Work exp min</th>
+      <th>Work exp max</th>
+      <th>Salary range min</th>
+      <th>Salary range max</th>
+      <th>Openings</th>
+      <th>Industry</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <% @bpojobs.each do |job| %>
+      <tr>
+        <td><%= job.category %></td>
+        <td><%= job.job_title %></td>
+        <td><%= job.job_description %></td>
+        <td><%= job.work_exp_min %></td>
+        <td><%= job.work_exp_max %></td>
+        <td><%= job.salary_range_min %></td>
+        <td><%= job.salary_range_max %></td>
+        <td><%= job.openings %></td>
+        <td><%= job.industry %></td>
+        <td><%= link_to 'Show', job %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
