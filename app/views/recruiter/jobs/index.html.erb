@@ -14,7 +14,7 @@
       <th>Salary range max</th>
       <th>Openings</th>
       <th>Industry</th>
-      
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -30,7 +30,9 @@
         <td><%= job.salary_range_max %></td>
         <td><%= job.openings %></td>
         <td><%= job.industry %></td>
-       
+        <td><%= link_to 'Show', recruiter_job_path(job) %></td>
+        <td><%= link_to 'Edit', edit_recruiter_job_path(job) %></td>
+        <td><%= link_to 'Destroy', recruiter_job_path(job), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +40,4 @@
 
 <br>
 
-
+<%= link_to 'New Job', new_recruiter_job_path %>

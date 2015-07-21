@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :jobs
+  namespace :recruiter do
+   resources :jobs
+  end
   resources :input_field_managers
+
+  get 'jobs/:category_id' => 'jobs#index', as: :jobs
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
