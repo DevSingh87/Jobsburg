@@ -3,7 +3,7 @@ class Job < ActiveRecord::Base
   belongs_to :industry
   has_and_belongs_to_many :locations
   has_many :taggings
-  has_many :tags, through: :taggings
+  has_many :tags, through: :taggings, dependent: :destroy
 
   def all_tags=(names)
   	self.tags = names.split(",").map do |t|

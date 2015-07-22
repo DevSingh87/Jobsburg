@@ -2,114 +2,33 @@
 
 <h1>Listing Jobs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Job title</th>
-      <th>Job description</th>
-      <th>Work exp min</th>
-      <th>Work exp max</th>
-      <th>Salary range min</th>
-      <th>Salary range max</th>
-      <th>Openings</th>
-      <th>Industry</th>
-      
-    </tr>
-  </thead>
 
-  <tbody>
-  <h2>Freshers Jobs  <div align="center"><%= link_to "...more Jobs", jobs_path(:category_id=>1) %>
-</div></h2>
+  <h2>Freshers Jobs  <div align="center"><%= link_to "...more Jobs", jobs_path(:category_id=>1) %></div></h2>
     <% @fresherjobs.each do |job| %>
-      <tr>
-        <td><%= job.category %></td>
-        <td><%= job.job_title %></td>
-        <td><%= job.job_description %></td>
-        <td><%= job.work_exp_min %></td>
-        <td><%= job.work_exp_max %></td>
-        <td><%= job.salary_range_min %></td>
-        <td><%= job.salary_range_max %></td>
-        <td><%= job.openings %></td>
-        <td><%= job.industry %></td>
-        
-      </tr>
+    <%= job.job_title %> - <h1> Location is </h1> <h6><%= job.locations.collect(&:city_name).join(",") %></h6><br/>
     <% end %>
 
-  </tbody>
-
-  </table>
+  
   <br/>
   <h2>Govt Jobs<div align="center"><%= link_to "...more Jobs", jobs_path(:category_id=>2) %>
 </div></h2>
-  <table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Job title</th>
-      <th>Job description</th>
-      <th>Work exp min</th>
-      <th>Work exp max</th>
-      <th>Salary range min</th>
-      <th>Salary range max</th>
-      <th>Openings</th>
-      <th>Industry</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    
+     
     <% @govtjobs.each do |job| %>
-      <tr>
-        <td><%= job.category %></td>
-        <td><%= job.job_title %></td>
-        <td><%= job.job_description %></td>
-        <td><%= job.work_exp_min %></td>
-        <td><%= job.work_exp_max %></td>
-        <td><%= job.salary_range_min %></td>
-        <td><%= job.salary_range_max %></td>
-        <td><%= job.openings %></td>
-        <td><%= job.industry %></td>
-       
-      </tr>
+    <%= job.job_title %> - <h1> Location is </h1> <h6><%= job.locations.collect(&:city_name).join(",") %></h6><br/>
     <% end %>
-  </tbody>
-  </table>
+ 
   <br/>
   <h2>BPO Jobs<div align="center"><%= link_to "...more Jobs", jobs_path(:category_id=>3) %>
 </div></h2>
-  <table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Job title</th>
-      <th>Job description</th>
-      <th>Work exp min</th>
-      <th>Work exp max</th>
-      <th>Salary range min</th>
-      <th>Salary range max</th>
-      <th>Openings</th>
-      <th>Industry</th>
-     
-    </tr>
-  </thead>
-  <tbody>
+ 
+
     
     <% @bpojobs.each do |job| %>
-      <tr>
-        <td><%= job.category %></td>
-        <td><%= job.job_title %></td>
-        <td><%= job.job_description %></td>
-        <td><%= job.work_exp_min %></td>
-        <td><%= job.work_exp_max %></td>
-        <td><%= job.salary_range_min %></td>
-        <td><%= job.salary_range_max %></td>
-        <td><%= job.openings %></td>
-        <td><%= job.industry %></td>
-       
-      </tr>
+    <%= job.job_title %> - <h1> Location is </h1> <h6><%= job.locations.collect(&:city_name).join(",") %></h6><br/>
     <% end %>
-  </tbody>
-</table>
+  
 
 <br>
+<% Industry.all.each do |indus| %>
+ <%= link_to indus.name, industrywisejobs_path(:industry_id=>indus) %>
+<% end %>
