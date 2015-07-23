@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @job.category %>
+</p>
+
+<p>
+  <strong>Job title:</strong>
+  <%= @job.job_title %>
+</p>
+
+<p>
+  <strong>Job description:</strong>
+  <%= @job.job_description %>
+</p>
+
+<p>
+  <strong>Work exp min:</strong>
+  <%= @job.work_exp_min %>
+</p>
+
+<p>
+  <strong>Work exp max:</strong>
+  <%= @job.work_exp_max %>
+</p>
+
+<p>
+  <strong>Salary range min:</strong>
+  <%= @job.salary_range_min %>
+</p>
+
+<p>
+  <strong>Salary range max:</strong>
+  <%= @job.salary_range_max %>
+</p>
+
+<p>
+  <strong>Openings:</strong>
+  <%= @job.openings %>
+</p>
+
+<p>
+  <strong>Industry:</strong>
+  <%= @job.industry %>
+</p>
+<p>
+  <strong>tags:</strong>
+  <%= @job.all_tags %>
+</p>
+
+<%= link_to 'Edit', edit_recruiter_job_path(@job) %> |
+<%= link_to 'Back', recruiter_jobs_path %>
+
+<h1>Related Jobs</h1>
+<% @related_jobs.each do | job | %> 
+  <% if !job.nil? %> 
+   <div style="margin-top:15px; margin-left:8px"> 
+   <%= link_to job.job_title, showjob_path(:id=>job) %>
+   </div>
+    <% end %> 
+    <% end %>

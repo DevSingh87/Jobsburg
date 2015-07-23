@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   end
   resources :input_field_managers
 
-  get 'jobs/:category_id' => 'jobs#index', as: :jobs
+  get 'jobs/categoty/:category_id' => 'jobs#index', as: :jobs
   get 'jobs/industry/:industry_id' => 'jobs#industrywise', as: :industrywisejobs
+  get 'jobs/:id' => 'jobs#showjob', as: :showjob
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

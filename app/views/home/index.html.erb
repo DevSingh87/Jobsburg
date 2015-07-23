@@ -5,7 +5,7 @@
 
   <h2>Freshers Jobs  <div align="center"><%= link_to "...more Jobs", jobs_path(:category_id=>1) %></div></h2>
     <% @fresherjobs.each do |job| %>
-    <%= job.job_title %> - <h1> Location is </h1> <h6><%= job.locations.collect(&:city_name).join(",") %></h6><br/>
+    <%= link_to job.job_title, showjob_path(:id=>job) %> - <h5> Location is </h5> <h6><%= job.locations.collect(&:city_name).join(", ") %></h6><br/>
     <% end %>
 
   
@@ -14,7 +14,7 @@
 </div></h2>
      
     <% @govtjobs.each do |job| %>
-    <%= job.job_title %> - <h1> Location is </h1> <h6><%= job.locations.collect(&:city_name).join(",") %></h6><br/>
+    <%= link_to job.job_title, showjob_path(:id=>job) %> - <h5> Location is </h5> <h6><%= job.locations.collect(&:city_name).join(", ") %></h6><br/>
     <% end %>
  
   <br/>
@@ -24,7 +24,7 @@
 
     
     <% @bpojobs.each do |job| %>
-    <%= job.job_title %> - <h1> Location is </h1> <h6><%= job.locations.collect(&:city_name).join(",") %></h6><br/>
+    <%= link_to job.job_title, showjob_path(:id=>job) %> - <h5> Location is </h5> <h6><%= job.locations.collect(&:city_name).join(", ") %></h6><br/>
     <% end %>
   
 
