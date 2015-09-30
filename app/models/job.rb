@@ -1,6 +1,7 @@
 class Job < ActiveRecord::Base
   belongs_to :category
   belongs_to :industry
+  belongs_to :recruiter
   has_and_belongs_to_many :locations
   has_many :taggings
   has_many :tags, through: :taggings, dependent: :destroy

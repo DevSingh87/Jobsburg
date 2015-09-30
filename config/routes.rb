@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :recruiters
   namespace :recruiter do
    resources :jobs
   end
